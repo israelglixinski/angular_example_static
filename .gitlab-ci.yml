@@ -1,0 +1,31 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install -g @angular/cli
+  - npm install
+
+build:
+  stage: build
+  script:
+    - ng build --configuration=production
+  artifacts:
+    paths:
+      - dist/
+
+pages:
+  stage: deploy
+  script:
+    - mv dist/* public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
