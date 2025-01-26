@@ -21,4 +21,5 @@ To run this project, ensure you have the following installed on your machine:
 
 ```bash
 git clone https://github.com/israelglixinski/angular_example_static.git
+(or git clone https://gitlab.com/israel_glixinski/angular_example_static.git)
 cd angular_example_static
